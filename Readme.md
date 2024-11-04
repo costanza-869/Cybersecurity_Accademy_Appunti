@@ -6,29 +6,44 @@
 [Se ssh non gira sulla porta 22, devo scrivere    ssh username@indirizzoIP -p numeroporta]
 
 vedi Tryhackme https://tryhackme.com/r/room/windowscommandline 
-Comando ```
+Comando 
+
+```
 tracert
 ```
+
 --> (traceroute) mostra il percorso dall’indirizzo IP iniziale a quello finale.
 
 ```
 nslookup`
 ``
+
 --> comando che mi dà informazioni sui record (A, AAAA, CNAME e MX)
 
 ```
-print(netstat)```
+netstat
+```
+
 --> comando per vedere tutte le connessioni stabilite tra le macchine, comprende anche i numeri di porta e il PID.  
 
 | “pipe” --> serve per collegare due comandi praticamente. Ad esempio:
-`netstat -abon | findstr 3389```
+
+```
+netstat -abon | findstr 3389
+```
+
 --> comando per cercare cosa gira sulla porta 3389 senza usare il 
 				comando Grep.
 
-```print(tasklist)```
+```
+tasklist
+```
 
 --> comando che mi dice tutti i programmi che stanno lavorando all’interno della macchina virtuale
-whois nomesito.it --> mi dà una serie di informazioni (data di creazione, data di scadenza…)
+```
+whois nomesito.it 
+```
+--> mi dà una serie di informazioni (data di creazione, data di scadenza…)
 
 
 
