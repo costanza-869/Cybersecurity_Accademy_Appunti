@@ -91,7 +91,27 @@ Nslookup -type=mx nomesito.it
 [Quando si invia o si riceve un messaggio di posta elettronica, questo arriva su un server. Infatti si può accedere alla posta elettronica da qualsiasi computer]
 Per capire dov’è la posta elettronica di una società, di un’azienda devo guardare il record MX. 
 
-
 -	TXT Record --> contengono informazioni che aiutano i server e i servizi di rete esterni a gestire le email in uscita dal dominio. Per verificare la proprietà del dominio, garantire la sicurezza delle email ed evitare spam e phishing.
 
+_________________________________________________________________________________________________________________________________________________________________
 
+**Active Reconnaissance**
+La ricognizione attiva richiede di stabilire un contatto diretto con il tuo obiettivo. Questo contatto può avvenire tramite una telefonata o una visita alla sede dell'azienda sotto un certo pretesto per raccogliere informazioni, spesso come parte di tecniche di social engineering. In alternativa, può essere una connessione diretta al sistema target, ad esempio visitando il sito web o controllando se la porta SSH del firewall è aperta. È simile all’ispezione ravvicinata di finestre e serrature. È quindi fondamentale ricordare di non intraprendere attività di ricognizione attiva senza prima ottenere un'autorizzazione legale scritta dal cliente.
+
+Il browser web è uno strumento comodo e disponibile su tutti i sistemi, utile per raccogliere informazioni su un obiettivo.
+
+Il browser si connette per impostazione predefinita:
+Alla porta TCP 80 per siti web su HTTP
+Alla porta TCP 443 per siti web su HTTPS
+Queste porte non vengono mostrate nella barra degli indirizzi. Tuttavia, si possono usare porte personalizzate per accedere a specifici servizi, come in https://127.0.0.1:8834/, che apre la connessione all’indirizzo 127.0.0.1 sulla porta 8834 tramite HTTPS.
+
+
+Durante la navigazione, puoi premere Ctrl+Shift+I su PC o ⌥ + ⌘ + I su Mac per aprire gli Strumenti per sviluppatori su Firefox o Chrome. Questi strumenti permettono di ispezionare elementi come file JavaScript, cookie salvati e la struttura delle cartelle del sito.
+
+**Estensioni utili per il penetration testing**
+Esistono anche molte estensioni per Firefox e Chrome che supportano il penetration testing, tra cui:
+
+FoxyProxy: Permette di cambiare velocemente server proxy, utile se si utilizzano strumenti come Burp Suite.
+User-Agent Switcher and Manager: Simula l’accesso da dispositivi diversi, ad esempio visualizzando il sito come se si usasse un iPhone.
+Wappalyzer: Identifica le tecnologie utilizzate sul sito, raccogliendo informazioni mentre si naviga come un normale utente.
+Questi strumenti rendono il browser versatile per raccogliere dati preliminari su un target.
