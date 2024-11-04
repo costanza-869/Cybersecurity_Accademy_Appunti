@@ -6,13 +6,18 @@
 [Se ssh non gira sulla porta 22, devo scrivere    ssh username@indirizzoIP -p numeroporta]
 
 vedi Tryhackme https://tryhackme.com/r/room/windowscommandline 
-Comando ```print(tracert)```
+Comando ```
+tracert
+```
 --> (traceroute) mostra il percorso dall’indirizzo IP iniziale a quello finale.
 
-```print(nslookup)```
+```
+nslookup`
+``
 --> comando che mi dà informazioni sui record (A, AAAA, CNAME e MX)
 
-```print(netstat)```
+```
+print(netstat)```
 --> comando per vedere tutte le connessioni stabilite tra le macchine, comprende anche i numeri di porta e il PID.  
 
 | “pipe” --> serve per collegare due comandi praticamente. Ad esempio:
