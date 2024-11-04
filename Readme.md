@@ -25,6 +25,8 @@ Comando `tracert`
 --> comando che mi dice tutti i programmi che stanno lavorando all’interno della macchina virtuale
 whois nomesito.it --> mi dà una serie di informazioni (data di creazione, data di scadenza…)
 
+
+
 #I RECORD
 Esistono diversi tipi di record:
 -	tipo A --> collega un nome di dominio a un indirizzo IP, indicando dove inviare il traffico web per quel dominio.
