@@ -6,17 +6,17 @@
 [Se ssh non gira sulla porta 22, devo scrivere    ssh username@indirizzoIP -p numeroporta]
 
 vedi Tryhackme https://tryhackme.com/r/room/windowscommandline 
-Comando 
+Comando --> (traceroute) mostra il percorso dall’indirizzo IP iniziale a quello finale.
+
 
 ```
 tracert
 ```
 
---> (traceroute) mostra il percorso dall’indirizzo IP iniziale a quello finale.
 
 ```
 nslookup`
-``
+```
 
 --> comando che mi dà informazioni sui record (A, AAAA, CNAME e MX)
 
@@ -40,9 +40,13 @@ tasklist
 ```
 
 --> comando che mi dice tutti i programmi che stanno lavorando all’interno della macchina virtuale
+
+
 ```
 whois nomesito.it 
 ```
+
+
 --> mi dà una serie di informazioni (data di creazione, data di scadenza…)
 
 
@@ -51,25 +55,37 @@ whois nomesito.it
 Esistono diversi tipi di record:
 -	tipo A --> collega un nome di dominio a un indirizzo IP, indicando dove inviare il traffico web per quel dominio.
 Facendo ping o nslookup --> con questi due comandi ottengo il record di tipo A, che corrisponde infatti all’indirizzo IP.
-In uno stesso server ci possono essere più siti internet. 
+In uno stesso server ci possono essere più siti internet.
 
-```print(Nslookup -type=A sitoweb.it)```
+
+```
+Nslookup -type=A sitoweb.it
+```
 
 -	tipo AAAA --> utilizzato per risolvere, cioè creare una corrispondenza tra un nome a dominio ed un indirizzo IPv6.
 
-```print(Nslookup -type=AAAA sitoweb.it)```
+```
+Nslookup -type=AAAA sitoweb.it
+```
 
 
 -	tipo CNAME --> Canonic Name Record --> associa un dominio alternativo a un dominio canonico; consente di creare un alias per un nome di dominio esistente. Mi permette di creare dei sottodomini. 
 Ad esempio: viaggi.conad.it  il dominio principale è conad.it, hanno creato il sottodominio “viaggi” che corrisponde al CNAME.
 
-```print(Nslookup -type=CNAME sitoweb.it)```
+```
+Nslookup -type=CNAME sitoweb.it
+```
 
 
 -	MX Record  dice principalmente dove sono collocati i server di posta elettronica. Sarebbe “Mail Exchange Record”.
 
+```
 Dig mx nomesito.it
-```print(Nslookup -type=mx nomesito.it)```
+```
+
+```
+Nslookup -type=mx nomesito.it
+```
 
 --> Questi due comandi mi portano allo stesso risultato: vedere quale indirizzo di posta elettronica ha questo sito.
 [Quando si invia o si riceve un messaggio di posta elettronica, questo arriva su un server. Infatti si può accedere alla posta elettronica da qualsiasi computer]
