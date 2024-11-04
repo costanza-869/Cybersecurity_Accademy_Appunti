@@ -1,6 +1,4 @@
-14/10/2024 1a lezione
-
-APPUNTI COMANDI WINDOWS
+#APPUNTI COMANDI WINDOWS
 
 [Per collegarsi in ssh:
 -	Apri il terminale
@@ -27,7 +25,7 @@ Comando `tracert`
 --> comando che mi dice tutti i programmi che stanno lavorando all’interno della macchina virtuale
 whois nomesito.it --> mi dà una serie di informazioni (data di creazione, data di scadenza…)
 
-I RECORD
+#I RECORD
 Esistono diversi tipi di record:
 -	tipo A --> collega un nome di dominio a un indirizzo IP, indicando dove inviare il traffico web per quel dominio.
 Facendo ping o nslookup --> con questi due comandi ottengo il record di tipo A, che corrisponde infatti all’indirizzo IP.
@@ -56,6 +54,6 @@ Dig mx nomesito.it
 Per capire dov’è la posta elettronica di una società, di un’azienda devo guardare il record MX. 
 
 
--	TXT Record  contengono informazioni che aiutano i server e i servizi di rete esterni a gestire le email in uscita dal dominio. Per verificare la proprietà del dominio, garantire la sicurezza delle email ed evitare spam e phishing.
+-	TXT Record --> contengono informazioni che aiutano i server e i servizi di rete esterni a gestire le email in uscita dal dominio. Per verificare la proprietà del dominio, garantire la sicurezza delle email ed evitare spam e phishing.
 
-Sono formati da una coppia chiave-valore
+
