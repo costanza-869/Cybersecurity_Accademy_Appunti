@@ -1,4 +1,4 @@
-#APPUNTI COMANDI WINDOWS
+**#APPUNTI COMANDI WINDOWS#**
 
 [Per collegarsi in ssh:
 -	Apri il terminale
@@ -51,7 +51,7 @@ whois nomesito.it
 
 
 
-#I RECORD
+**#I RECORD#**
 Esistono diversi tipi di record:
 -	tipo A --> collega un nome di dominio a un indirizzo IP, indicando dove inviare il traffico web per quel dominio.
 Facendo ping o nslookup --> con questi due comandi ottengo il record di tipo A, che corrisponde infatti all’indirizzo IP.
