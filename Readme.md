@@ -94,6 +94,39 @@ Per capire dov’è la posta elettronica di una società, di un’azienda devo g
 -	TXT Record --> contengono informazioni che aiutano i server e i servizi di rete esterni a gestire le email in uscita dal dominio. Per verificare la proprietà del dominio, garantire la sicurezza delle email ed evitare spam e phishing.
 
 _________________________________________________________________________________________________________________________________________________________________
+**Passive Reconnaissance**
+Corrisponde alla fase iniziale dell’ethical hacking in cui si raccolgono informazioni su un obiettivo senza interagire direttamente con i suoi sistemi. L'obiettivo è ottenere dati come nomi di dominio, indirizzi IP, email, e informazioni pubbliche, usando solo fonti accessibili (ad esempio, motori di ricerca, social media, WHOIS, registri pubblici). A differenza della ricognizione attiva, non coinvolge alcun contatto con il sistema bersaglio, riducendo così il rischio di essere rilevati.
+
+**CONFRONTO COMANDI RIC. PASSIVA**
+1. nslookup
+Scopo: Effettua ricerche DNS per ottenere l’indirizzo IP di un dominio o il nome di dominio associato a un indirizzo IP (reverse lookup).
+Utilizzo:
+o	nslookup esempio.com per ottenere l’IP del dominio.
+o	nslookup 8.8.8.8 per un reverse lookup (partendo dall’IP risale al nome del dominio).
+--> Dando questo 8.8.8.8 io gli sto dicendo “utilizza il DNS 8.8.8.8 e non quello del mio provider”
+
+**Pro**: Semplice e facile da usare, disponibile in quasi tutti i sistemi operativi.
+**Contro:** Mostra informazioni limitate e meno dettagliate rispetto a dig.
+
+2. dig
+Scopo: Esegue ricerche DNS dettagliate per ottenere informazioni complete su un dominio o IP, come i record A, MX, NS, TXT e altro.
+Utilizzo:
+o	dig esempio.com per un lookup DNS.
+o	dig mx esempio.com per ottenere i record MX.
+o	dig -x 8.8.8.8 per il reverse lookup.
+**Pro**: Output dettagliato e altamente configurabile, con informazioni dettagliate su vari record DNS.
+**Contro**: Output più complesso da leggere per chi non è abituato.
+
+3. whois
+Scopo: Ottiene le informazioni di registrazione di un dominio o di un indirizzo IP, inclusi dettagli sull’intestatario, date di creazione e scadenza, registrante, contatti amministrativi e tecnici.
+Utilizzo:
+o	whois esempio.com per informazioni di registrazione del dominio.
+o	whois 8.8.8.8 per i dettagli sull’IP (a chi appartiene).
+**Pro**: Fornisce dettagli importanti su proprietà, date di scadenza e registrazione, utili per capire chi possiede il dominio/IP.
+**Contro**: Non fornisce informazioni sui record DNS (non è un comando per il lookup DNS).
+
+![image](https://github.com/user-attachments/assets/ad0344b5-e3a4-46e8-8b23-508c7a7c251a)
+
 
 **Active Reconnaissance**
 La ricognizione attiva richiede di stabilire un contatto diretto con il tuo obiettivo. Questo contatto può avvenire tramite una telefonata o una visita alla sede dell'azienda sotto un certo pretesto per raccogliere informazioni, spesso come parte di tecniche di social engineering. In alternativa, può essere una connessione diretta al sistema target, ad esempio visitando il sito web o controllando se la porta SSH del firewall è aperta. È simile all’ispezione ravvicinata di finestre e serrature. È quindi fondamentale ricordare di non intraprendere attività di ricognizione attiva senza prima ottenere un'autorizzazione legale scritta dal cliente.
@@ -115,3 +148,7 @@ FoxyProxy: Permette di cambiare velocemente server proxy, utile se si utilizzano
 User-Agent Switcher and Manager: Simula l’accesso da dispositivi diversi, ad esempio visualizzando il sito come se si usasse un iPhone.
 Wappalyzer: Identifica le tecnologie utilizzate sul sito, raccogliendo informazioni mentre si naviga come un normale utente.
 Questi strumenti rendono il browser versatile per raccogliere dati preliminari su un target.
+
+**SCHEMA RIASSUNTIVO FASI DI HACKING**
+file:///C:/Users/costa/Downloads/Drawing-204.sketchpad.pdf 
+
