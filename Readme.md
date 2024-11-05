@@ -99,6 +99,7 @@ Corrisponde alla fase iniziale dell’ethical hacking in cui si raccolgono infor
 
 **CONFRONTO COMANDI RIC. PASSIVA**
 1. nslookup
+   
 Scopo: Effettua ricerche DNS per ottenere l’indirizzo IP di un dominio o il nome di dominio associato a un indirizzo IP (reverse lookup).
 Utilizzo:
 o	nslookup esempio.com per ottenere l’IP del dominio.
@@ -110,6 +111,7 @@ o	nslookup 8.8.8.8 per un reverse lookup (partendo dall’IP risale al nome del 
 
 
 2. dig
+   
 Scopo: Esegue ricerche DNS dettagliate per ottenere informazioni complete su un dominio o IP, come i record A, MX, NS, TXT e altro.
 Utilizzo:
 o	dig esempio.com per un lookup DNS.
@@ -119,7 +121,8 @@ o	dig -x 8.8.8.8 per il reverse lookup.
 **Contro**: Output più complesso da leggere per chi non è abituato.
 
 
-3. whois
+4. whois
+   
 Scopo: Ottiene le informazioni di registrazione di un dominio o di un indirizzo IP, inclusi dettagli sull’intestatario, date di creazione e scadenza, registrante, contatti amministrativi e tecnici.
 Utilizzo:
 o	whois esempio.com per informazioni di registrazione del dominio.
