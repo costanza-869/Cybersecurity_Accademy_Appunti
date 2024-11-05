@@ -108,6 +108,7 @@ o	nslookup 8.8.8.8 per un reverse lookup (partendo dall’IP risale al nome del 
 **Pro**: Semplice e facile da usare, disponibile in quasi tutti i sistemi operativi.
 **Contro:** Mostra informazioni limitate e meno dettagliate rispetto a dig.
 
+
 2. dig
 Scopo: Esegue ricerche DNS dettagliate per ottenere informazioni complete su un dominio o IP, come i record A, MX, NS, TXT e altro.
 Utilizzo:
@@ -116,6 +117,7 @@ o	dig mx esempio.com per ottenere i record MX.
 o	dig -x 8.8.8.8 per il reverse lookup.
 **Pro**: Output dettagliato e altamente configurabile, con informazioni dettagliate su vari record DNS.
 **Contro**: Output più complesso da leggere per chi non è abituato.
+
 
 3. whois
 Scopo: Ottiene le informazioni di registrazione di un dominio o di un indirizzo IP, inclusi dettagli sull’intestatario, date di creazione e scadenza, registrante, contatti amministrativi e tecnici.
