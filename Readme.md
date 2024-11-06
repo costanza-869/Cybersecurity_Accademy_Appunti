@@ -171,3 +171,13 @@ Questi strumenti rendono il browser versatile per raccogliere dati preliminari s
 **SCHEMA RIASSUNTIVO FASI DI HACKING**
 file:///C:/Users/costa/Downloads/Drawing-204.sketchpad.pdf 
 
+
+**NMAP**
+vedi room Tryhackme https://tryhackme.com/r/room/furthernmap 
+
+Nell'ambito dell'hacking, la conoscenza è potere: più informazioni si hanno su un sistema o rete target, più opzioni si avranno a disposizione. Per questo motivo, è essenziale eseguire una corretta enumerazione prima di tentare qualsiasi attacco.
+Quando si riceve un IP (o una serie di IP) per un audit di sicurezza, il primo passo è ottenere una "mappa" dei servizi attivi sui target. Questo processo inizia con la **scansione delle porte**. Ogni servizio su un computer utilizza una porta per comunicare; ad esempio, un server web potrebbe usare la porta 80 per HTTP e la 443 per HTTPS. Avere questa "mappa" permette di sapere quali servizi sono disponibili e su quali porte, passo necessario per capire come attaccare o testare il sistema.
+Ogni computer ha 65535 porte disponibili, molte delle quali sono standard per servizi specifici (ad es., HTTP su porta 80 e HTTPS su 443). Tuttavia, nelle simulazioni di hacking, le porte standard possono essere cambiate, rendendo fondamentale una corretta enumerazione.
+Senza sapere quali porte sono aperte, non è possibile attaccare con successo il target. Ecco perché si inizia sempre con una scansione delle porte, generalmente eseguita con uno strumento chiamato nmap. Nmap verifica ogni porta del target per determinarne lo stato (aperta, chiusa, filtrata). Una volta identificate le porte aperte, è possibile verificare i servizi in esecuzione su ciascuna porta.
+Perché nmap? È considerato uno standard nel settore per la sua funzionalità avanzata e la capacità di rilevare vulnerabilità, grazie al suo motore di scripting.
+
