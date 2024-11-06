@@ -262,7 +262,9 @@ nmap -sn 192.168.0.0/24
 
 Il flag -sn dice a Nmap di non scansionare alcuna porta, costringendolo a fare affidamento principalmente sui pacchetti di echo ICMP (o richieste ARP su una rete locale, se eseguito con i privilegi di root) per identificare gli host. Inoltre, il flag -sn fa sì che Nmap invii anche un pacchetto TCP SYN alla porta 443 e un pacchetto TCP ACK (o SYN se non eseguito come root) alla porta 80 del target.
 
+
 **NMAP SCRIPTING ENGINE**
+
 Il Nmap Scripting Engine (NSE) è una potente estensione di Nmap che ne amplia notevolmente le funzionalità. Gli script NSE sono scritti in linguaggio di programmazione Lua e possono essere utilizzati per varie operazioni, come la ricerca di vulnerabilità o l'automazione degli exploit. NSE è particolarmente utile nella fase di ricognizione, grazie alla vasta libreria di script disponibile.
 
 `Le categorie di script principali includono:`
