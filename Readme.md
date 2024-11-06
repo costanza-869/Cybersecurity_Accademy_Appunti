@@ -246,3 +246,18 @@ Le scansioni NULL, FIN e Xmas sono tecniche avanzate di scansione delle porte us
 Queste scansioni sono utili per:
 1. Evitare rilevamenti: Possono aggirare alcuni firewall e IDS che si aspettano una connessione TCP completa (SYN, ACK, ecc.).
 2. Testare la sicurezza: Sono usate per verificare se un sistema è vulnerabile a queste tecniche o se un firewall o IDS può rilevarle.
+
+**ICMP NETWORK SCANNING**
+Per eseguire una ping sweep, si utilizza l'opzione -sn insieme agli intervalli di indirizzi IP, che possono essere specificati con un trattino (-) o con la notazione CIDR. Ad esempio, possiamo scansionare la rete 192.168.0.x con:
+
+```
+nmap -sn 192.168.0.1-254
+```
+
+oppure
+
+```
+nmap -sn 192.168.0.0/24
+```
+
+Il flag -sn dice a Nmap di non scansionare alcuna porta, costringendolo a fare affidamento principalmente sui pacchetti di echo ICMP (o richieste ARP su una rete locale, se eseguito con i privilegi di root) per identificare gli host. Inoltre, il flag -sn fa sì che Nmap invii anche un pacchetto TCP SYN alla porta 443 e un pacchetto TCP ACK (o SYN se non eseguito come root) alla porta 80 del target.
