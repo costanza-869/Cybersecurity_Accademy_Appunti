@@ -171,6 +171,7 @@ Questi strumenti rendono il browser versatile per raccogliere dati preliminari s
 **SCHEMA RIASSUNTIVO FASI DI HACKING**
 file:///C:/Users/costa/Downloads/Drawing-204.sketchpad.pdf 
 
+___________________________________________________________________________________________________________________________________________________________________
 
 **NMAP**
 vedi room Tryhackme https://tryhackme.com/r/room/furthernmap 
@@ -180,4 +181,25 @@ Quando si riceve un IP (o una serie di IP) per un audit di sicurezza, il primo p
 Ogni computer ha 65535 porte disponibili, molte delle quali sono standard per servizi specifici (ad es., HTTP su porta 80 e HTTPS su 443). Tuttavia, nelle simulazioni di hacking, le porte standard possono essere cambiate, rendendo fondamentale una corretta enumerazione.
 Senza sapere quali porte sono aperte, non è possibile attaccare con successo il target. Ecco perché si inizia sempre con una scansione delle porte, generalmente eseguita con uno strumento chiamato nmap. Nmap verifica ogni porta del target per determinarne lo stato (aperta, chiusa, filtrata). Una volta identificate le porte aperte, è possibile verificare i servizi in esecuzione su ciascuna porta.
 Perché nmap? È considerato uno standard nel settore per la sua funzionalità avanzata e la capacità di rilevare vulnerabilità, grazie al suo motore di scripting.
+
+Nmap può essere combinato con moltissimi switches per effettuare diversi tipi di scansione; tra i più importanti:
+
+```
+nmap -O <target-ip>
+```
+
+--> comando per capire quale sistema operativo usa la macchina target
+
+
+```
+nmap -vv <target-ip>
+```
+
+--> comando per aumentare la verbosity, per avere più info
+
+```
+nmap -oN <filename> <target-ip>
+```
+
+--> comando che mi permette di salvare i risultati di nmap in un file formato "normale"
 
