@@ -215,3 +215,20 @@ Svantaggi dei SYN scan:
 - Permessi elevati: Richiedono permessi sudo in Linux per poter inviare pacchetti raw, operazione che solo l'utente root può eseguire.
 - Instabilità dei servizi: I SYN scan possono far cadere i servizi instabili, il che può essere problematico in ambienti di produzione.
 
+
+**CONNESSIONI UDP**
+A differenza di TCP, le connessioni UDP sono senza stato. Questo significa che, invece di iniziare una connessione con un processo di handshake (scambio di pacchetti), UDP invia pacchetti a una porta di destinazione sperando che arrivino a destinazione. Questo lo rende ideale per applicazioni che richiedono velocità piuttosto che qualità, come la condivisione di video. Tuttavia, l'assenza di conferma rende la scansione UDP molto più difficile e lenta rispetto a TCP. Il comando Nmap per eseguire una scansione UDP è -sU.
+
+```
+nmap -sU <target-ip>
+```
+
+Comportamento della scansione UDP:
+Porta aperta: Se un pacchetto viene inviato a una porta UDP aperta, non c'è risposta. Nmap la considera open|filtered (aperta o filtrata), poiché non può determinare se la porta sia effettivamente aperta o se sia bloccata da un firewall. Se riceve una risposta UDP (rara), la porta viene segnata come aperta.
+
+Porta chiusa: Se un pacchetto viene inviato a una porta UDP chiusa, il target risponde con un pacchetto ICMP che indica che la porta non è raggiungibile. In questo caso, Nmap la segna come chiusa.
+
+Vantaggi e svantaggi delle scansioni UDP:
+Lentezza: Le scansioni UDP sono significativamente più lente rispetto a quelle TCP, richiedendo circa 20 minuti per scansionare i primi 1000 porti con una buona connessione. Per questo motivo, è buona pratica usare l'opzione --top-ports <numero> per scansionare solo le porte più comuni. Ad esempio, nmap -sU --top-ports 20 <target> scansionerà le prime 20 porte UDP più comuni.
+
+Richieste vuote: Nmap invia generalmente pacchetti UDP vuoti, ma per le porte occupate da servizi conosciuti, invia un payload specifico per il protocollo, che ha maggiori probabilità di generare una risposta utile.
