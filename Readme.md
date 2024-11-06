@@ -232,3 +232,17 @@ Vantaggi e svantaggi delle scansioni UDP:
 Lentezza: Le scansioni UDP sono significativamente più lente rispetto a quelle TCP, richiedendo circa 20 minuti per scansionare i primi 1000 porti con una buona connessione. Per questo motivo, è buona pratica usare l'opzione --top-ports <numero> per scansionare solo le porte più comuni. Ad esempio, nmap -sU --top-ports 20 <target> scansionerà le prime 20 porte UDP più comuni.
 
 Richieste vuote: Nmap invia generalmente pacchetti UDP vuoti, ma per le porte occupate da servizi conosciuti, invia un payload specifico per il protocollo, che ha maggiori probabilità di generare una risposta utile.
+
+
+**SCANSIONI NULL / FIN / XMAS**
+Le scansioni NULL, FIN e Xmas sono tecniche avanzate di scansione delle porte usate in Nmap per **cercare di eludere i sistemi di rilevamento**, come i firewall o i sistemi di intrusion detection (IDS). Queste scansioni sono chiamate "scansioni furtive" perché non stabiliscono una connessione TCP completa, rendendo più difficile la rilevazione.
+
+**Scansione NULL (-sN)**: Non invia alcun flag TCP (nessun SYN, ACK, FIN, ecc.), quindi non può essere facilmente identificata. Le porte aperte non rispondono, mentre le porte chiuse possono rispondere con un pacchetto RST.
+
+**Scansione FIN (-sF)**: Invia un pacchetto TCP con il solo flag FIN, che segnala la fine di una connessione. Le porte chiuse rispondono con un pacchetto RST, mentre quelle aperte generalmente non rispondono affatto.
+
+**Scansione Xmas (-sX)**: Invia un pacchetto con i flag FIN, URG e PSH attivi, creando un pacchetto "illuminato" (da cui il nome Xmas). Come nella scansione FIN, le porte chiuse rispondono con RST, mentre le porte aperte non rispondono.
+
+Queste scansioni sono utili per:
+1. Evitare rilevamenti: Possono aggirare alcuni firewall e IDS che si aspettano una connessione TCP completa (SYN, ACK, ecc.).
+2. Testare la sicurezza: Sono usate per verificare se un sistema è vulnerabile a queste tecniche o se un firewall o IDS può rilevarle.
