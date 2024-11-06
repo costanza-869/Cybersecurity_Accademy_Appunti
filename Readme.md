@@ -203,3 +203,15 @@ nmap -oN <filename> <target-ip>
 
 --> comando che mi permette di salvare i risultati di nmap in un file formato "normale"
 
+**SCANSIONI STEALTH**
+I SYN scan (**opzione -sS**) sono una tipologia di scansione utilizzata per esaminare l'intervallo di porte TCP di un target. A differenza delle scansioni TCP tradizionali, i SYN scan inviano un pacchetto SYN al target e, al ricevimento di un SYN/ACK, rispondono con un pacchetto RST per interrompere la connessione. Questo comportamento impedisce al server di completare la connessione e fare nuovi tentativi di connessione.
+
+Vantaggi dei SYN scan:
+- Evasione dei sistemi di rilevamento intrusioni (IDS): Poiché non completano il processo di handshake, possono aggirare gli IDS più vecchi che si basano sulla rilevazione di una connessione completa.
+- Stealth: Non vengono generalmente registrati dalle applicazioni in ascolto sulle porte, in quanto la connessione viene registrata solo dopo che è completamente stabilita.
+- Velocità: Rispetto alle scansioni TCP tradizionali, i SYN scan sono molto più veloci perché non richiedono di completare il processo di handshake per ogni porta.
+
+Svantaggi dei SYN scan:
+- Permessi elevati: Richiedono permessi sudo in Linux per poter inviare pacchetti raw, operazione che solo l'utente root può eseguire.
+- Instabilità dei servizi: I SYN scan possono far cadere i servizi instabili, il che può essere problematico in ambienti di produzione.
+
